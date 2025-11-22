@@ -1,61 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Rudra</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #0d0d0d;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #00eaff;
-        }
-
-        .container {
-            margin-top: 40px;
-        }
-
-        .camera-box {
-            width: 320px;
-            height: 240px;
-            background: #222;
-            margin: 0 auto;
-            border-radius: 10px;
-            border: 2px solid #00eaff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .note {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #cccccc;
-        }
-    </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Project Rudra — Demo</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
+  <header>
     <h1>PROJECT RUDRA</h1>
-    <h3>Emotion-Aware AI Buddy System</h3>
+    <p class="subtitle">Emotion-Aware AI Buddy — Student Demo</p>
+  </header>
 
-    <div class="container">
-        <div class="camera-box">
-            <p>Camera preview will appear here</p>
-        </div>
+  <main class="container">
+    <section class="camera-card">
+      <div class="video-wrap">
+        <!-- This video element will show your webcam -->
+        <video id="webcam" autoplay playsinline></video>
+      </div>
 
-        <p class="note">
-            This is your first frontend file. We will add camera, audio, and avatar here soon.
-        </p>
-    </div>
+      <div class="controls">
+        <button id="startBtn">Start Camera</button>
+        <button id="stopBtn" disabled>Stop Camera</button>
+        <button id="snapBtn" disabled>Take Photo</button>
+      </div>
 
+      <div class="snapshot">
+        <canvas id="snapshotCanvas" width="320" height="240"></canvas>
+      </div>
+    </section>
+
+    <p class="note">Allow the browser to use your camera when it asks. If it blocks, refresh the page.</p>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
-
